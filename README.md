@@ -1,4 +1,4 @@
-absolute_wedding_perfection
+Absolute Wedding Perfection
 =======
 
-website for wedding planner, Angie Froemel, to connect with her potential clients and share information about her services
+Website for wedding planner, Angie Froemel, to connect with her potential clients and share information about her services.
