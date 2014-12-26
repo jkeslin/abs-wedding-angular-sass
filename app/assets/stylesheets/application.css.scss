@@ -1,0 +1,28 @@
+/*
+ * All SCSS will compile onto this file. Add links to individual views below in
+ * order to include them. This way, each individual view will have access to 
+ * the mixins and globals in the base folder, so keep sharable mixins there.
+ *
+ *= require_self
+ */
+
+// Vendor 
+@import "bourbon";
+@import "base/base"; // Bitters scaffolding (builds on bourbon and neat)
+@import "neat";
+@import "bootswatch/readable/variables";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "jquery-ui/autocomplete";
+@import "bootswatch/readable/bootswatch";
+
+// Overall Layout Page (with container)
+	@import "styles/layout";
+
+// Individual Views
+	// Features
+		@import "styles/features/home/home";
+		@import "styles/features/photo-albums/photo-albums";
+	
+	// Directives
+		@import "styles/directives/header";

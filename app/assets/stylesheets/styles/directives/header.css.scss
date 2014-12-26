@@ -1,0 +1,56 @@
+.header{
+	z-index: 9999;
+	// @include outer-container;
+	// @include span-columns(18);
+	display: block;
+	background-color: $ghost;
+	position: fixed;
+	height: $header-height;
+	top: 0em;
+	left: 0em;
+	width: 100%;
+}
+
+.header_company{
+	@include span-columns(4);
+	h3{
+		margin: 0.57em 1.1em;
+	}
+}
+
+.header_cart{
+	@include span-columns(1.85);
+	@include shift(9);
+	// opacity: 0.7;
+	margin-top: 1em;
+	@include omega();
+	li{
+		margin: .3em .3em;
+		a{ text-decoration: none;}
+	}
+}
+
+.header_search{
+	@include span-columns(3);
+	// height: $search-bar-height;
+}
+
+.header_form{
+	margin: .6em .3em;
+}
+
+
+// .search_button{
+// 	float: left;
+// }
+
+// .search_submit{
+// 	margin: 0;
+// 	width: 10%;
+// }
+
+
+
+
+
+

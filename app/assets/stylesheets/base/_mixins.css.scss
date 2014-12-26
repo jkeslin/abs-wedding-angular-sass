@@ -1,0 +1,26 @@
+// -------------------------------------------------------------------
+// Omega Reset for Bourbon Neat
+//
+// http://joshfry.me/notes/omega-reset-for-bourbon-neat
+// -------------------------------------------------------------------
+// This is used for the transitions between screen widths:
+//  > have a base omega set for nth
+//  > on new width: 
+// 		- omega-reset the previous nth
+// 		- omage the new nth
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+@mixin pa_media($col_small, $col_medium, $col_large){
+	@include media($small-screen-up){
+			@include span-columns($col_small);
+		}
+	@include media($medium-screen-up){
+			@include span-columns($col_medium);
+	}
+	@include media($large-screen-up){
+			@include span-columns($col_large);
+	}
+}
