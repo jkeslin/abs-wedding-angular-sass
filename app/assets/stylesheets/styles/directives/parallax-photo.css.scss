@@ -7,13 +7,14 @@ $parallax-background-height: $parallax-window-height * 2;
   position: relative;
   text-align: center;
   width: 100%;
+  margin-bottom: $buffer;
 }
 
 .parallax-static-content {
   color: #9A9A8A;
   padding: 8em 0;
   position: relative;
-  z-index: 9;
+  // z-index: 9;
 }
 
 .parallax-background {

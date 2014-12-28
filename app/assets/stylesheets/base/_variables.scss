@@ -1,6 +1,6 @@
 // Vendor Variables
 	// Neat variables:
-		$visual-grid: true !default; // Set to true to see the Neat grid
+		$visual-grid: false !default; // Set to true to see the Neat grid
 		$visual-grid-color: blue !default;
 		$visual-grid-index: back !default; //set to back for grid to be behind content
 		$visual-grid-opacity: 0.05 !default;
@@ -23,6 +23,7 @@
 // div heights
 	$search-bar-height: 1.5em;
 	$header-height: 4em;
+	$buffer: 3em;
 
 // Line height
 	$base-line-height: 1.5;

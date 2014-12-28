@@ -18,6 +18,8 @@
   $grid-item-big-columns: 8;
   $grid-item-color: white;
   $grid-item-height: 14em;
+  
+  margin-bottom: $buffer;
 
   @include clearfix;
     
