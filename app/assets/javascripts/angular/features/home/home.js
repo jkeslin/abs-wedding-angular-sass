@@ -3,7 +3,12 @@ angular.module('awp-home',[
 	'ngRoute',
 	'ui.bootstrap',
 	'ngAnimate',
-  'directives-header'])
+  'directives-header',
+  'directives-parallax-photo',
+  'directives-grid-items',
+  'directives-packages-bullet-points',
+  'directives-knoxville-map',
+  'directives-footer'])
 
 .config(['$routeProvider', function ($routeProvider) {
 
