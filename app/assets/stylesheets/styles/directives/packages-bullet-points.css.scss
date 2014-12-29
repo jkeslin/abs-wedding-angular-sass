@@ -1,63 +1,114 @@
-.bullets {
-  $icon-bullet-size: 3.5em;
+.accordion-tabs {
+  $tab-border-color: $base-border-color;
+  $tab-border: 1px solid $tab-border-color;
+  $tab-content-background: lighten($light-gray, 10);
+  $tab-active-background: $tab-content-background;
+  $tab-inactive-color: $base-background-color;
+  $tab-inactive-hover-color: darken($light-gray, 5);
+  $tab-mode: $medium-screen;
 
-  overflow: auto;
-  margin-bottom: $base-line-height;
+  @include shift(4);
+  @include span-columns(10);
 
-  // change ".three-col-bullet" class to this for two bullet layout
-  .two-col-bullet {
-    @include media($large-screen) {
-      @include span-columns(6);
-      @include omega(2n);  
-    } 
+
+  @include clearfix;
+  margin-bottom: $base-spacing;
+
+  @include media(max-width $tab-mode) {
+    border: $tab-border;
+    border-radius: $base-border-radius;
   }
+
+  .tab-header-and-content {
+    @include media($tab-mode) {
+      display: inline;
+      float: none;
+    }
+
+    &:first-child .tab-link {
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+
+      @include media(max-width $tab-mode) {
+        border-top: 0;
+      }
+    }
+
+    &:last-child .tab-link {
+      @include media(max-width $tab-mode) {
+        border-bottom-left-radius: $base-border-radius;
+        border-bottom-right-radius: $base-border-radius;
+      }
+    }
+  }
+
+  .tab-link {
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    color: $cadet-blue;
+    display: block;
+    font-family: $serif;
+    // font-weight: bold;
+    font-size: 1.5em;
+    padding: $base-spacing/2 $column;
+    text-align: center;
+    width: 32%;
+
+    @include media($tab-mode) {
+      display: inline-block;
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      border-top: 0;
+    }
+
+    &:hover {
+      color: $ron-burgundy;
+      text-decoration: none;
+    }
+
+    &:focus {
+      text-decoration: none;
+      outline: none;
+    }
+
+    &.is-active {
+      text-decoration: none;
+      background-color: $tab-active-background;
+
+      @include media($tab-mode) {
+        background-color: $tab-active-background;
+        border: $tab-border;
+        border-bottom-color: $tab-active-background;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .tab-content {
+    background: $tab-content-background;
+    display: none;
+    padding: $base-spacing $gutter;
+    width: 100%;
+    color: $cadet-blue;
+
+    @include media($tab-mode) {
+      border-bottom-left-radius: $base-border-radius;
+      border-bottom-right-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      border: $tab-border;
+      float: left;
+    }
+    
+    & p {
+      padding-left: 2em;
+    }
+  }
+
+  .center-align-tab-titles {
+    text-align: center;
   
-  .three-col-bullet {
-    @include media($large-screen) {
-      @include span-columns(4);
-      @include omega(3n);
+    & h3 {
+      font-family: $serif;
     }
-  }
-
-  // change ".three-col-bullet" class to this for four bullet layout
-  .four-col-bullet {
-    @include media($large-screen) {
-      @include span-columns(3);
-      @include omega(4n);
-    }
-  }
-
-  .bullet-icon {
-    float: left;
-    background: $base-accent-color;
-    padding: $icon-bullet-size /4;
-    border-radius: 50%;
-    width: $icon-bullet-size;
-    height: $icon-bullet-size;
-  }
-
-  .bullet-icon-1 {
-    background: $base-accent-color;
-  }
-
-  .bullet-icon-2 {
-    background: adjust-hue($base-accent-color, -50);
-  }
-
-  .bullet-icon-3 {
-    background: adjust-hue($base-accent-color, -140);
-  }
-
-  .bullet-content {
-    margin-left: $icon-bullet-size *1.4;
-    margin-bottom: 2em;
-  }
-
-  h2 {
-    font-size: $icon-bullet-size /2.5;
-    padding-top: $icon-bullet-size /7;
-    margin-bottom: $icon-bullet-size /6;
-    border-bottom: 1px solid transparentize($base-font-color, .8);
-    display: inline-block;
   }
 }

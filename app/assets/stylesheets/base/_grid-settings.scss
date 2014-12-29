@@ -1,10 +1,11 @@
 @import "neat-helpers";
 
 // Neat Overrides
-$column: 90px;
-$gutter: 30px;
 $grid-columns: 18;
-$max-width: em(1216);
+$grid-section-width: 100% / $grid-columns;
+$column: $grid-section-width*0.75;
+$gutter: $grid-section-width*0.25;
+$max-width: 100%;
 
 // Neat Breakpoints
 $small-screen: em(320);
@@ -13,6 +14,10 @@ $large-screen: em(860);
 
 // Bonobos - 600, 800, 1000
 
-$small-screen-up: new-breakpoint(min-width $small-screen 6);
-$medium-screen-up: new-breakpoint(min-width $medium-screen 12);
-$large-screen-up: new-breakpoint(min-width $large-screen 18);
+$small-screen-columns: 6;
+$mediums-screen-columns: 12;
+$large-screen-columns: 18;
+
+$small-screen-up: new-breakpoint(min-width $small-screen $small-screen-columns);
+$medium-screen-up: new-breakpoint(min-width $medium-screen $mediums-screen-columns);
+$large-screen-up: new-breakpoint(min-width $large-screen $large-screen-columns);

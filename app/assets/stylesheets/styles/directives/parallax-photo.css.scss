@@ -1,25 +1,33 @@
-$parallax-window-height: 30em;
+$parallax-window-height: 23em;
 $parallax-background-height: $parallax-window-height * 2;
+$parallax-start-position: $header-height + 2em;
+$parallax-photo-path: "/images/wedding_images/flowers_1b.png";
 
 .parallax-window {
-  max-height: $parallax-window-height;
+  height: $parallax-window-height;
   overflow: hidden;
   position: relative;
   text-align: center;
   width: 100%;
+  // margin-top: $parallax-start-position;
+  margin-bottom: $buffer;
+  box-shadow: inset 0 0 10px #000000;
 }
 
 .parallax-static-content {
-  color: #9A9A8A;
-  padding: 8em 0;
+  font-family: $serif;
+  font-size: 5em;
+  color: $cadet-blue;
+  text-shadow: 2px 2px #555;
+  padding-top: 1.5em;
   position: relative;
   z-index: 9;
 }
 
 .parallax-background {
-  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png") repeat;
+  background: url($parallax-photo-path) repeat;
   background-size: cover;
-  background-color: beige;
+  background-color: $sky-blue;
   background-position: top;
   height: $parallax-background-height;
   left: 0;

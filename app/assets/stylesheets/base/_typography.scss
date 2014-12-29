@@ -1,8 +1,9 @@
+
 body {
   -webkit-font-smoothing: antialiased;
   background-color: $base-background-color;
   color: $base-font-color;
-  font-family: $base-font-family;
+  font-family: $sans-serif;
   font-size: $base-font-size;
   line-height: $base-line-height;
 }
@@ -13,7 +14,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $header-font-family;
+  font-family: $sans-serif;
   line-height: $header-line-height;
   margin: 0;
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
@@ -44,11 +45,13 @@ h6 {
 }
 
 p {
+  font-family: $sans-serif;
   margin: 0 0 ($base-spacing / 2);
 }
 
 a {
   @include transition(color 0.1s linear);
+  font-family: $sans-serif;
   color: $base-link-color;
   text-decoration: none;
 

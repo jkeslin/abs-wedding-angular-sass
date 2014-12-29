@@ -1,6 +1,8 @@
 #map_canvas {
-  width: 100%;
+  @include shift(4);
+  @include span-columns(10);
   height: 400px;
+  margin-bottom: $buffer;
 }
 
 #map_canvas img { 
