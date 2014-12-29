@@ -6,8 +6,8 @@
 		$visual-grid-opacity: 0.05 !default;
 
 // Typography
-	$sans-serif: $helvetica;
-	$serif: $georgia;
+	$sans-serif: 'Questrial';
+	$serif: 'Playball';
 	$base-font-family: $sans-serif;
 	$header-font-family: $base-font-family;
 
@@ -22,8 +22,9 @@
 
 // div heights
 	$search-bar-height: 1.5em;
-	$header-height: 4em;
+	$header-height: 2em;
 	$buffer: 3em;
+	$height: $header-height;
 
 // Line height
 	$base-line-height: 1.5;
@@ -38,6 +39,16 @@
 	$pa-green: #1E824C;
 	
 // Colors
+	$cadet-blue: #5F9EA0;
+	$gray-blue: #475B63;
+	$light-tan: #F2E9DC;
+	$soft-purple: #8EA4D2;
+	$seafoam: #C4E7D4;
+	$sky-blue: #D9F0FF;
+	$ron-burgundy: #A0596E;
+	$pastel-blue: #A5C1FF; 
+	//end awp color palette
+
 	$blue: #477DCA;
 	$dark-gray: #333;
 	$medium-gray: #999;
@@ -57,6 +68,7 @@
 
 
 // Background Color
+	$header-footer-bg-color: $cadet-blue;
 	$base-background-color: white;
 
 // Font Colors

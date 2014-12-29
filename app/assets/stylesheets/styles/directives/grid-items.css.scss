@@ -1,21 +1,25 @@
 @mixin grid-item-columns($columns) {
-  width: (100% / 12) * $columns;
+  width: (100% / $grid-columns) * $columns;
 }
+
+$grid-item-image-path-1: "/images/wedding_images/bride_groom_greens.png";
+$grid-item-image-path-second: "/images/wedding_images/vw_bus.png";
+$grid-item-image-path-third: "/images/wedding_images/flowers_wine.png";
 
 .grid-items {
   $grid-items-background: $base-background-color;
-  $grid-item-background: desaturate($base-accent-color, 30); 
+  $grid-item-background: desaturate($gray-blue, 30); 
   $grid-item-colors: 
     desaturate($base-accent-color, 30), 
-    #3581A5, 
-    #5FBEBE,
-    #98C79A,
-    #A7A891, 
-    #BDCC97,
-    #979EA0;
+    $gray-blue,
+    $ron-burgundy,
+    $soft-purple,
+    darken($light-tan, 10),
+    darken($seafoam, 10),
+    darken($sky-blue, 10);
   $grid-item-border-size: 9px;
-  $grid-item-columns: 4;
-  $grid-item-big-columns: 8;
+  $grid-item-columns: 6;
+  $grid-item-big-columns: 12;
   $grid-item-color: white;
   $grid-item-height: 14em;
   
@@ -28,9 +32,9 @@
     height: $grid-item-height;
     background: $grid-item-background;
     width: 100%;
-    overflow: hidden;
+    overflow: scroll;
     float: left;
-    padding: 2em;
+    padding: 2em 1em 1em 1em;
     border-top: 0;
     border-bottom: $grid-item-border-size solid $grid-items-background;
     border-left: $grid-item-border-size /2 solid $grid-items-background;
@@ -42,11 +46,31 @@
       @include grid-item-columns($grid-item-columns);
     }
 
+    &:nth-child(1){
+      text-shadow: 2px 2px #555;
+    }
+    
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus {
+      text-decoration: none;
+    }
+
+    &.no-left-border {
+      border-left: 0px;
+    }
+
+    &.no-right-border {
+      border-right: 0px;
+    }
+
     @for $i from 1 through length($grid-item-colors) { // assign colors from $grid-item-colors list
       &:nth-child(#{$i}) {
         $background-from-list: nth($grid-item-colors, $i);
         background-color: $background-from-list;
-        box-shadow: inset 0px 0px 1px 2px darken($background-from-list, 10);
+        // box-shadow: inset 0px 0px 1px 2px darken($background-from-list, 10);
         &:hover {
           background-color: darken($background-from-list, 10);
           background-repeat: no-repeat;
@@ -66,13 +90,18 @@
 
   .grid-item h1 {
       color: $grid-item-color;
+      font-family: $sans-serif;
       font-size: 1.3em;
+      margin-top: 0px;
       margin-bottom: .4em;
     }
 
   .grid-item p {
       margin: auto;
-      color: transparentize($grid-item-color, .3);
+      font-family: $sans-serif;
+      font-weight: bold;
+      text-decoration: none;
+      color: transparentize($grid-item-color, 0.1);
       @include media($medium-screen) {
         max-width: 70%;
       }
@@ -84,16 +113,36 @@
     }
     p {
       @include media($medium-screen) {
-        max-width: 60%;
+        max-width: 80%;
       }  
     }
   }
 
-  .grid-item-image {
-    background: url(/images/lake-transparent.png);
+  .grid-item-less-top-padding {
+    padding-top: 1em;
+  }
+
+  .grid-item-image-1 {
+    background: url($grid-item-image-path-1);
     background-color: $grid-item-background;
     background-repeat: no-repeat;
     background-position: top;
+    background-size: cover;
+  }
+
+  .grid-item-image-second {
+    background: url($grid-item-image-path-second);
+    background-color: $grid-item-background;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+  }
+
+  .grid-item-image-third {
+    background: url($grid-item-image-path-third);
+    background-color: $grid-item-background;
+    background-repeat: no-repeat;
+    background-position: bottom;
     background-size: cover;
   }
 }

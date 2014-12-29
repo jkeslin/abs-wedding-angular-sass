@@ -7,6 +7,7 @@
  */
 
 // Vendor 
+@import url("http://fonts.googleapis.com/css?family=Questrial|Parisienne|Playball");
 @import "bourbon";
 @import "base/base"; // Bitters scaffolding (builds on bourbon and neat)
 @import "neat";
@@ -15,6 +16,16 @@
 @import "bootstrap";
 @import "jquery-ui/autocomplete";
 @import "bootswatch/readable/bootswatch";
+
+//how to use the google fonts above:
+
+/*
+font-family: 'Questrial', sans-serif;
+font-family: 'Parisienne', cursive;
+font-family: 'Playball', cursive;
+*/
+
+
 
 // Overall Layout Page (with container)
 	@import "styles/layout";
