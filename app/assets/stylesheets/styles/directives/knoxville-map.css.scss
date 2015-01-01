@@ -1,8 +1,14 @@
+$side-image-path: "/images/wedding_images/seating_flowers.png";
+//option-2: "/images/wedding_images/venue_2.png";
+$knoxville-map-row-background-color: $light-tan;
+$side-image-background-top: #B5EBEB;
+$side-image-background-bottom: #5DAC5D;
+$side-image-border: 1px solid gray;
+
 #map_canvas {
-  @include shift(4);
-  @include span-columns(10);
+  @include span-columns(18);
   height: 400px;
-  margin-bottom: $buffer;
+  border: $side-image-border;
 }
 
 #map_canvas img { 
@@ -30,3 +36,77 @@
   margin-top: .5em;
   padding-top: .3em;
 }
+
+//stuff for the side content
+
+.map-and-sidebar-row {
+  @include span-columns(12);
+  
+  background: $knoxville-map-row-background-color;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  margin-top: 6em;
+  margin-bottom: 6em;
+  border-top: $side-image-border;
+  border-bottom: $side-image-border;
+
+  @include media($large-screen) {
+    @include row(table);
+  }
+
+  .side-image-container {
+    @include background(url($side-image-path), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
+    background-color: $side-image-background-top;
+    border-bottom: $side-image-border;
+    background-size: cover;
+    display: block;
+    min-height: 12em;
+    // padding: 3em;
+    text-align: center;
+
+    @include media($large-screen) {
+      @include span-columns(4);
+      background-position: bottom;
+      background-size: cover;
+      border-right: $side-image-border;
+    }
+  }
+
+  .map-container {
+    @include span-columns(8);
+
+    @include media($large-screen) {
+      @include span-columns(8);
+    }
+  }
+
+  @include reset-display();
+}
+
+.content-over-image {
+  @include shift(3);
+  @include span-columns(4);
+  position: relative;
+  top: 565px;
+  height: 400px;
+  text-align: center;
+
+  & p {
+
+  }
+
+  & h1 {
+    color: white;
+    font-family: $serif;
+  }
+
+  & button {
+
+  }
+}
+
+
+
+
+
+
